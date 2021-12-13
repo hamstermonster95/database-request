@@ -33,7 +33,7 @@ class LocationView(FormView):
 
 				form = request.POST
 				location = form['localization']
-				engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+				engine = create_engine('***')
 
 				
 
@@ -69,7 +69,7 @@ class LocationView(FormView):
 
 
 
-				database_url = 'postgres://eyubuloglbxgpo:0bb4b2888e3a7794bcaa965d73e7e13301ad2b1585cbaf7e9ee1f1b4cd6e9591@ec2-184-73-198-174.compute-1.amazonaws.com:5432/d4ee7jenm82fu'
+				database_url = '***'
 
 				engine1 = create_engine(database_url)
 				patients.to_sql(name='patientz', con=engine1, index = False, if_exists= 'replace') 
@@ -100,13 +100,13 @@ class OrderView(FormView):
 
 				order_numbr = form['order_number']
 
-				engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+				engine = create_engine('***')
 							
 							
 				orders= pd.read_sql('SELECT order_id, patient_id, created_date FROM orders', engine)
 
 				bloodtests= pd.read_sql('SELECT blood_test_id, order_id FROM blood_tests', engine)
-				database_url = 'postgres://eyubuloglbxgpo:0bb4b2888e3a7794bcaa965d73e7e13301ad2b1585cbaf7e9ee1f1b4cd6e9591@ec2-184-73-198-174.compute-1.amazonaws.com:5432/d4ee7jenm82fu'
+				database_url = '***'
 
 				engine1 = create_engine(database_url)
 				patients= pd.read_sql('SELECT * FROM patientz', engine1)
@@ -183,7 +183,7 @@ class TestView(FormView):
 
 				tests = form['tests']
 				
-				database_url = 'postgres://eyubuloglbxgpo:0bb4b2888e3a7794bcaa965d73e7e13301ad2b1585cbaf7e9ee1f1b4cd6e9591@ec2-184-73-198-174.compute-1.amazonaws.com:5432/d4ee7jenm82fu'
+				database_url = '***'
 
 				engine1 = create_engine(database_url)
 				merged_inner= pd.read_sql('SELECT * FROM merged_innez', engine1)				
@@ -191,7 +191,7 @@ class TestView(FormView):
 
 
 				if (tests == 'Vitamin D'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value FROM results WHERE normal_position_id= '5c6ad87c-39b9-48f5-8e4a-8744170ec464'", engine)
 					
 
@@ -210,7 +210,7 @@ class TestView(FormView):
 					
 
 				elif(tests == 'Vitamin B9 (Folic acid)'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value  FROM results WHERE normal_position_id= '6f753b31-61ab-4980-a5e3-f5b22597ac08'", engine)
 					names = []
 			                    #russianpanelpos = unite['64aa8df1-6dc1-4cdd-956f-033f343ecd72'].to_list()
@@ -226,7 +226,7 @@ class TestView(FormView):
 					final=final.drop(columns=['blood_test_id'])
 					       
 				elif(tests == 'Triglycerides'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value  FROM results WHERE normal_position_id= '35abf5bc-7b1f-443c-b4d4-e304f3a5c696'", engine)
 
 					    
@@ -242,7 +242,7 @@ class TestView(FormView):
 					final = final.dropna(how='any')
 					final=final.drop(columns=['blood_test_id'])
 				elif(tests == 'Creatinine'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value  FROM results WHERE normal_position_id= '5f467d4b-cdd3-4723-b9a1-f4810e6a1345'", engine)
 
 					    
@@ -258,7 +258,7 @@ class TestView(FormView):
 					final = final.dropna(how='any')
 					final=final.drop(columns=['blood_test_id'])	
 				elif(tests == 'AST'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value  FROM results WHERE normal_position_id= '0dccda1a-8845-41b5-8078-0df3a0d4005e'", engine)
 
 					    
@@ -274,7 +274,7 @@ class TestView(FormView):
 					final = final.dropna(how='any')
 					final=final.drop(columns=['blood_test_id'])
 				elif(tests == 'ALT'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value  FROM results WHERE normal_position_id= '510b415a-3d22-42dc-ab3c-3d12857821e8'", engine)
 
 					    
@@ -290,7 +290,7 @@ class TestView(FormView):
 					final = final.dropna(how='any')
 					final=final.drop(columns=['blood_test_id'])     
 				elif(tests == 'Uric acid'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value  FROM results WHERE normal_position_id= '937b223e-8bb6-4708-a422-6ea6bd3f6cc4'", engine)
 
 					    
@@ -306,7 +306,7 @@ class TestView(FormView):
 					final = final.dropna(how='any')
 					final=final.drop(columns=['blood_test_id'])   					
 				elif(tests == 'Total cholesterol'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value  FROM results WHERE normal_position_id= '4319cee7-db11-4099-a531-dd31e8462dba'", engine)
 
 					    
@@ -322,7 +322,7 @@ class TestView(FormView):
 					final = final.dropna(how='any')
 					final=final.drop(columns=['blood_test_id'])   
 				elif(tests == 'Homocysteine'):
-					engine = create_engine('postgres://Analytics:pe817e57a697cec3465b3786454373e603974f2481bc4884a587fd59213c591ba@ec2-34-246-15-148.eu-west-1.compute.amazonaws.com:5432/d45o17p5ncfeid')
+					engine = create_engine('***')
 					resultz = pd.read_sql("SELECT blood_test_id, absolute_value  FROM results WHERE normal_position_id= '3443ed7a-3d52-4d5e-b0db-c302bb3b4a80'", engine)
 
 					    
@@ -354,8 +354,7 @@ class ByPosView(FormView):
 		if request.method == 'POST':
 
 				form = request.POST
-				database_url = 'postgres://eyubuloglbxgpo:0bb4b2888e3a7794bcaa965d73e7e13301ad2b1585cbaf7e9ee1f1b4cd6e9591@ec2-184-73-198-174.compute-1.amazonaws.com:5432/d4ee7jenm82fu'
-
+				database_url = '***'
 				engine1 = create_engine(database_url)
 				merged_inner= pd.read_sql('SELECT * FROM finalz', engine1)                
 				resultz= pd.read_sql('SELECT * FROM results', engine1)  
@@ -399,7 +398,7 @@ class FinaleView1(FormView):
 
 	def get_button(request):
 		if request.method == 'POST':
-			database_url = 'postgres://eyubuloglbxgpo:0bb4b2888e3a7794bcaa965d73e7e13301ad2b1585cbaf7e9ee1f1b4cd6e9591@ec2-184-73-198-174.compute-1.amazonaws.com:5432/d4ee7jenm82fu'
+			database_url = '***'
 
 			engine = create_engine(database_url)
 			final= pd.read_sql('SELECT * FROM merged_innez', engine)		
