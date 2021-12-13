@@ -50,7 +50,7 @@ class LocationView(FormView):
 				component=form['component']
 				
 
-				engine = create_engine('postgresql://rpm_analyst:0223b547-57ac-47b4-8f23-340c24ad2986@rpm-postgres.postgres.database.azure.com/rpm_db_prod')
+				engine = create_engine('***')
 
 				global patients
 
