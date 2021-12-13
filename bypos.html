@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Database Request</title>
+  </head>
+  <body>
+    <p>
+      <b>Type of position</b>
+    </p>
+    <form method="post">
+      {% csrf_token %}
+      {{ form }}
+       <input type="submit" value="Continue">
+    </form>
+  </body>
+</html>
