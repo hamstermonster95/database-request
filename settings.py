@@ -90,7 +90,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.                 # Or path to database file if using sqlite3.
         'USER': 'rpm_analyst',                      # Not used with sqlite3.
-        'PASSWORD': '0223b547-57ac-47b4-8f23-340c24ad2986',                  # Not used with sqlite3.
+        'PASSWORD': '***',                  # Not used with sqlite3.
         'HOST': 'rpm-postgres.postgres.database.azure.com',                      # Set to empty string for localhost. Not used with sqlite3.
         'NAME': 'rpm_db_prod'                    # Set to empty string for default. Not used with sqlite3.
     }
