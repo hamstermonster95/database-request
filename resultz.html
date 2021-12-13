@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Your database request results are saved on your computer.</title>
+  </head>
+  <body>
+  	<p>
+  	  <b>Download</b>
+  	</p>
+     <form method="post">
+      {% csrf_token %}
+      {{ form }}
+
+      <input type="submit" value="Download requested data as csv">
+  </body>
+</html>
